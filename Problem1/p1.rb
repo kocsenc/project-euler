@@ -6,14 +6,7 @@
 
 def main() 
 	result = 0
-
-	for i in (1..999) do
-		if i % 3 == 0 or i % 5 == 0
-			result += i
-		end
-
-	end
-
+	1.upto(999){ |x|; if ((x % 3) == 0 ) || ((x % 5) == 0 ); result+=x;end}
 	puts "Result: " + result.to_s
 end
 
