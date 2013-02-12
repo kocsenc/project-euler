@@ -6,7 +6,8 @@
 
 def main() 
 	result = 0
-	1.upto(999){ |x|; if ((x % 3) == 0 ) || ((x % 5) == 0 ); result+=x;end}
+	#1.upto(999){ |x| do if ((x % 3) == 0 ) || ((x % 5) == 0 ); result+=x;end}
+	1.upto 999 do |x| result += x if ((x % 3) == 0 || (x % 5) == 0) end
 	puts "Result: " + result.to_s
 end
 
