@@ -7,11 +7,15 @@
 
 
 def main()
-	no = 600851475143
-	i = 2
-	while no % i != 0 do 
-		puts i 
-		no -= 1
-	end
+	puts "Starting program.."
+	x = generate(600851475143)
+	puts x[-1].to_s
+
+
+end	
+def generate(n)
+	return [] if n == 1
+	factor = (2..n).find {|x| n % x == 0 }
+	[factor] + generate(n/factor)
 end
 main()
