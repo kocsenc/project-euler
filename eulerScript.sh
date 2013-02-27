@@ -1,17 +1,10 @@
 #!/bin/bash
 
+for i in {10..99}; do
+	echo Creating folder number $i
+	mkdir p$i
+	touch ./p$i/p$i.rb
 
-#count = "6"
-
-#while [ $count -lt 16 ] 
-#do
-#	echo Creating folder number $count
-#	mkdir "p$count"
-#	touch "./p$count/p$count.rb"
-#	count=$[$count + 1]
-#done
-
-
-for i in {6..16}; do
-	echo $i
+	# Renaming to have 3 digits
+	# mv ./p$i p0$i
 done
