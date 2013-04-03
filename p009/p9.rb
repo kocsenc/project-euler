@@ -13,14 +13,18 @@
 def main()
 	x = result()
 	puts "Answer: " + x.inspect
+	File.open("out.txt", "w") do |file|
+		x.each{|d| file.puts(x.to_s + " //  ") }
+	end
 end
 
 def result()
+	yo = Array.new
 	arr = Array.new
 	2.upto(1000){ |a|
 		2.upto(1000) { |b|
 			2.upto(1000) { |c|
-				if ((a+b+c) == 1000)
+				if ((a+b+c) == 1000 && a < b && b < c)
 					x = a**2
 					y = b**2					
 					xPlusY = x+y
@@ -39,7 +43,11 @@ def result()
 
 			}
 		}
-		puts( (a/1000).to_s + "% Done...")
+		prog = a/1000
+		if !yo.include?(prog)
+			puts( prog.to_s + "% Done...")  
+			yo.push prog
+			end
 	}
 	return arr
 end
