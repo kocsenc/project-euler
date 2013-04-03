@@ -1,0 +1,9 @@
+Due to ArchLinux being ArchLinux;
+
+Answer is:
+a=200
+b=375
+c=425
+
+abc = 3187500 (Acoording to Ruby)
+
