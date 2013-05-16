@@ -30,10 +30,11 @@
 
 def main()
 	maxValue = 0
-	board = Array.new(20)
+	board = Array.new()
+	puts "created new array"
 	board.push [8,49,81,52,22,24,32,67,24,21,78,16,86,19,04,88,04,20,20,1]
 	board.push [2,49,49,70,31,47,98,26,55,36,17,39,56,80,52,36,42,69,73,70]
-	board.push [22, 99, 31, 95, 16, 32, 81, 20, 58, 23, 53, 5, 0, 81, 08, 68, 16, 36, 35, 54]
+	board.push [22,99,31,95,16,32,81,20,58,23,53,5,0,81,8,68,16,36,35,54]
 	board.push [97, 40, 73, 23,71,60,28,68,5,9,28,42,48,68,83,87,73,41,29,71]
 	board.push [38,17,55,4,51,99,64,2,66,75,22,96,35,5,97,57,38,72,78,83]
 	board.push [15,81,79,60,67,3,23,62,73,0,75,35,71,94,35,62,25,30,31,51]
@@ -52,15 +53,71 @@ def main()
 	board.push [91,62,36,36,13,12,64,94,63,33,56,85,17,55,98,53,76,36,5,67]
 	board.push [8,0,65,91,80,50,70,21,72,95,92,57,58,40,66,69,36,16,54,48]
 
-	board.each{ |col| 
-		col.each{ |row| 
 
-		}
-	}
+	for col in (0...20) do 
+			for row in (0...20) do
+				if board[row][col] != nil
+					right = tryRight(board, col, row)
+					diagonal = tryDiagonal(board, col, row)
+					down = tryDown(board, col, row)
+
+					puts "@[col,row] : " + col.to_s + "] [" + row.to_s
+					puts "Right: " + right.to_s
+					puts "Diag: " + diagonal.to_s
+					puts "Down: " + down.to_s
 
 
+					maxValue = right if right > maxValue
+					maxValue = diagonal if diagonal > maxValue
+					maxValue = down if down > maxValue
+				end
+		end
+	end
+	puts "Max value ended up being: " + maxValue.to_s
 end
 
-def tryRow(maxValue, )
+def tryRight(board, startCol, startRow)
+	arr = Array.new
+	for col in (startCol..startCol+4) do
+		if board[col][startRow] != nil && col <= 16 
+			arr.push( board[col][startRow] )
+		else
+			return 0
+		end
+	end
+	
+	ans = arr.inject(:*)
+	return ans
+end
+
+def tryDiagonal(board, startCol, startRow)
+	arr = Array.new
+	row = startRow
+	for col in (startCol..startCol+4) do
+		if board[col][row] != nil && row <= 16 && col <= 16
+			arr.push( board[col][row] )
+			row += 1
+		else
+			return 0
+		end
+	end
+	
+	ans = arr.inject(:*)
+	return ans
+end
+
+def tryDown(board, startCol, startRow)
+	arr = Array.new
+	for row in (startRow..startRow+4) do
+		if board[startCol][row] != nil && row <= 16 
+			arr.push(board[startCol][row])
+		else
+			return 0
+		end
+	end
+	puts arr.inspect
+	return arr.inject(:*)
+	
+end
 
 main()
