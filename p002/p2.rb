@@ -7,22 +7,23 @@
 
 #Note: 33th fib number is last # to be < 4million
 def fib(n)
-	#if n > 4000000
-	#	return puts n
-	#end
-	return n if (0..1).include? n
-	fib(n-1) + fib(n-2) if n > 1
+  #if n > 4000000
+  #	return puts n
+  #end
+  return n if (0..1).include? n
+  fib(n-1) + fib(n-2) if n > 1
 end
 
-def main()
-	result = 0
-	0.upto(40) { |x| 
-		val = fib(x)
-		puts val.to_s
-		if val < 4000000 and val % 2 == 0
-			result += val
-		end
-	}
-	puts "Result: " + result.to_s
+def main
+  result = 0
+  0.upto(40) { |x|
+    val = fib(x)
+    puts val.to_s
+    if val < 4000000 and val % 2 == 0
+      result += val
+    end
+  }
+  puts 'Result: ' + result.to_s
 end
+
 main()
