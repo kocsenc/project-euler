@@ -28,96 +28,92 @@
 #What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 2020 grid?
 
 
-def main()
-	maxValue = 0
-	board = Array.new()
-	puts "created new array"
-	board.push [8,49,81,52,22,24,32,67,24,21,78,16,86,19,04,88,04,20,20,1]
-	board.push [2,49,49,70,31,47,98,26,55,36,17,39,56,80,52,36,42,69,73,70]
-	board.push [22,99,31,95,16,32,81,20,58,23,53,5,0,81,8,68,16,36,35,54]
-	board.push [97, 40, 73, 23,71,60,28,68,5,9,28,42,48,68,83,87,73,41,29,71]
-	board.push [38,17,55,4,51,99,64,2,66,75,22,96,35,5,97,57,38,72,78,83]
-	board.push [15,81,79,60,67,3,23,62,73,0,75,35,71,94,35,62,25,30,31,51]
-	board.push [0,18,14,11,63,45,67,12,99,76,31,31,89,47,99,20,39,23,90,54]
-	board.push [40,57,29,42,89,02,10,20,26,44,67,47,07,69,16,72,11,88,01,69]
-	board.push [0,60,93,69,41,44,26,95,97,20,15,55,5,28,7,3,24,37,74,16]
-	board.push [75,87,71,24,92,75,38,63,17,45,94,58,44,73,97,46,94,62,31,92]
-	board.push [4,17,40,68,36,33,40,94,78,35,3,88,44,92,57,33,72,99,49,33]
-	board.push [5,40,67,56,54,53,67,39,78,14,80,24,37,13,32,67,18,69,71,48]
-	board.push [7,98,53,1,22,78,59,63,96,0,4,0,44,86,16,46,8,82,48,61]
-	board.push [78,43,88,32,40,36,54,8,83,61,62,17,60,52,26,55,46,67,86,43]
-	board.push [52,69,30,56,40,84,70,40,14,33,16,54,21,17,26,12,29,59,81,52]
-	board.push [12,48,3,71,28,20,66,91,88,97,14,24,58,77,79,32,32,85,16,1]
-	board.push [50,4,49,37,66,35,18,66,34,34,9,36,51,4,33,63,40,74,23,89]
-	board.push [77,56,13,2,33,17,38,49,89,31,53,29,54,89,27,93,62,4,57,19]
-	board.push [91,62,36,36,13,12,64,94,63,33,56,85,17,55,98,53,76,36,5,67]
-	board.push [8,0,65,91,80,50,70,21,72,95,92,57,58,40,66,69,36,16,54,48]
+def main
+  max_val = 0
+  board = Array.new()
+  puts 'created new array'
+  board.push [8, 49, 81, 52, 22, 24, 32, 67, 24, 21, 78, 16, 86, 19, 04, 88, 04, 20, 20, 1]
+  board.push [2, 49, 49, 70, 31, 47, 98, 26, 55, 36, 17, 39, 56, 80, 52, 36, 42, 69, 73, 70]
+  board.push [22, 99, 31, 95, 16, 32, 81, 20, 58, 23, 53, 5, 0, 81, 8, 68, 16, 36, 35, 54]
+  board.push [97, 40, 73, 23, 71, 60, 28, 68, 5, 9, 28, 42, 48, 68, 83, 87, 73, 41, 29, 71]
+  board.push [38, 17, 55, 4, 51, 99, 64, 2, 66, 75, 22, 96, 35, 5, 97, 57, 38, 72, 78, 83]
+  board.push [15, 81, 79, 60, 67, 3, 23, 62, 73, 0, 75, 35, 71, 94, 35, 62, 25, 30, 31, 51]
+  board.push [0, 18, 14, 11, 63, 45, 67, 12, 99, 76, 31, 31, 89, 47, 99, 20, 39, 23, 90, 54]
+  board.push [40, 57, 29, 42, 89, 02, 10, 20, 26, 44, 67, 47, 07, 69, 16, 72, 11, 88, 01, 69]
+  board.push [0, 60, 93, 69, 41, 44, 26, 95, 97, 20, 15, 55, 5, 28, 7, 3, 24, 37, 74, 16]
+  board.push [75, 87, 71, 24, 92, 75, 38, 63, 17, 45, 94, 58, 44, 73, 97, 46, 94, 62, 31, 92]
+  board.push [4, 17, 40, 68, 36, 33, 40, 94, 78, 35, 3, 88, 44, 92, 57, 33, 72, 99, 49, 33]
+  board.push [5, 40, 67, 56, 54, 53, 67, 39, 78, 14, 80, 24, 37, 13, 32, 67, 18, 69, 71, 48]
+  board.push [7, 98, 53, 1, 22, 78, 59, 63, 96, 0, 4, 0, 44, 86, 16, 46, 8, 82, 48, 61]
+  board.push [78, 43, 88, 32, 40, 36, 54, 8, 83, 61, 62, 17, 60, 52, 26, 55, 46, 67, 86, 43]
+  board.push [52, 69, 30, 56, 40, 84, 70, 40, 14, 33, 16, 54, 21, 17, 26, 12, 29, 59, 81, 52]
+  board.push [12, 48, 3, 71, 28, 20, 66, 91, 88, 97, 14, 24, 58, 77, 79, 32, 32, 85, 16, 1]
+  board.push [50, 4, 49, 37, 66, 35, 18, 66, 34, 34, 9, 36, 51, 4, 33, 63, 40, 74, 23, 89]
+  board.push [77, 56, 13, 2, 33, 17, 38, 49, 89, 31, 53, 29, 54, 89, 27, 93, 62, 4, 57, 19]
+  board.push [91, 62, 36, 36, 13, 12, 64, 94, 63, 33, 56, 85, 17, 55, 98, 53, 76, 36, 5, 67]
+  board.push [8, 0, 65, 91, 80, 50, 70, 21, 72, 95, 92, 57, 58, 40, 66, 69, 36, 16, 54, 48]
 
 
-	for col in (0...20) do 
-			for row in (0...20) do
-				if board[row][col] != nil
-					right = tryRight(board, col, row)
-					diagonal = tryDiagonal(board, col, row)
-					down = tryDown(board, col, row)
+  (0...20).each { |col|
+    (0...20).each { |row|
+      if board[row][col] != nil
+        right = try_right(board, col, row)
+        diagonal = try_diag(board, col, row)
+        down = try_down(board, col, row)
 
-					puts "@[col,row] : " + col.to_s + "] [" + row.to_s
-					puts "Right: " + right.to_s
-					puts "Diag: " + diagonal.to_s
-					puts "Down: " + down.to_s
+        puts '@[col,row] : ' + col.to_s + '] [' + row.to_s
+        puts 'Right: ' + right.to_s
+        puts 'Diag: ' + diagonal.to_s
+        puts 'Down: ' + down.to_s
 
-
-					maxValue = right if right > maxValue
-					maxValue = diagonal if diagonal > maxValue
-					maxValue = down if down > maxValue
-				end
-		end
-	end
-	puts "Max value ended up being: " + maxValue.to_s
+        max_val = right if right > max_val
+        max_val = diagonal if diagonal > max_val
+        max_val = down if down > max_val
+      end
+    }
+  }
+  puts 'Max value ended up being: ' + max_val.to_s
 end
 
-def tryRight(board, startCol, startRow)
-	arr = Array.new
-	for col in (startCol..startCol+4) do
-		if board[col][startRow] != nil && col <= 16 
-			arr.push( board[col][startRow] )
-		else
-			return 0
-		end
-	end
-	
-	ans = arr.inject(:*)
-	return ans
+def try_right(board, start_col, start_row)
+  arr = Array.new
+  (start_col..start_col+4).each { |col|
+    if board[col][start_row] != nil && col <= 16
+      arr.push(board[col][start_row])
+    else
+      return 0
+    end
+  }
+
+  arr.inject(:*)
 end
 
-def tryDiagonal(board, startCol, startRow)
-	arr = Array.new
-	row = startRow
-	for col in (startCol..startCol+4) do
-		if board[col][row] != nil && row <= 16 && col <= 16
-			arr.push( board[col][row] )
-			row += 1
-		else
-			return 0
-		end
-	end
-	
-	ans = arr.inject(:*)
-	return ans
+def try_diag(board, start_col, start_row)
+  arr = Array.new
+  row = start_row
+  (start_col..start_col+4).each { |col|
+    if board[col][row] != nil && row <= 16 && col <= 16
+      arr.push(board[col][row])
+      row += 1
+    else
+      return 0
+    end
+  }
+
+  arr.inject(:*)
 end
 
-def tryDown(board, startCol, startRow)
-	arr = Array.new
-	for row in (startRow..startRow+4) do
-		if board[startCol][row] != nil && row <= 16 
-			arr.push(board[startCol][row])
-		else
-			return 0
-		end
-	end
-	puts arr.inspect
-	return arr.inject(:*)
-	
+def try_down(board, start_col, start_row)
+  arr = Array.new
+  (start_row..start_row+4).each { |row|
+    if board[start_col][row] != nil && row <= 16
+      arr.push(board[start_col][row])
+    else
+      return 0
+    end
+  }
+  puts arr.inspect
+  arr.inject(:*)
 end
 
 main()
