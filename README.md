@@ -1,7 +1,18 @@
 project.euler
 =============
 
-Repository holding varoius problems presented by ProjectEuler.net ; which involve using the power of programming and mathematics to solve problems.
+Solutions for [Project Euler](http://projecteuler.net).
 
-PROGRESS:
-[#                                        ] 5/416
+### Completed:
+* 1-11
+* 20 
+* 22 
+
+### Languages used:
+* Ruby
+* Python
+* [Julia](http://julialang.org)
+
+### Rules
+* Remember to name the file p#.py within `src` dir.
+* Place any helper files in `src/assets`. Name them with the problem number
