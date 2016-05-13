@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Kocsen Chung
 #Smallest multiple - Problem 5
 

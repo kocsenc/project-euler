@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Kocsen Chung
 ## Largest palindrome product - Problem 4
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Kocsen Chung
 # Project Euler Problem 22
 

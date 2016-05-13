@@ -5,6 +5,7 @@ Solutions for [Project Euler](http://projecteuler.net).
 
 ### Completed:
 * 1-11
+* 13
 * 20 
 * 22 
 

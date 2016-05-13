@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Kocsen Chung
 # Project Euler - Problem 6
 
